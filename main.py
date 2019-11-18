@@ -79,6 +79,14 @@ data2=pd.concat([df['count'],df[var2]],axis=1)
 data2.plot.scatter(x=var2,y='atemp',ylim=(0,900))
 plt.savefig('atemp_count_scatterplot.png')
 
+#Find correlation using heatmap
+#Features that influence the rental count are - Registeres ,casual,atemp, temp
+corrmat = df.corr()
+sns.heatmap(corrmat,square=True);
+plt.savefig('heatmap.png')
+
+
+
 
 
 
